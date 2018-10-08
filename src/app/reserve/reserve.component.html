@@ -1,0 +1,56 @@
+<!-- <form [formGroup]="reservationForm"> 
+  <input type="date" fromControlName="date">
+<select formControlName="time">
+    <option *ngFor="let to of timeOptions">{{ to }}</option>
+</select>
+<select fromControlName="people">
+  <option *ngFor="let po of peopleOptions">{{ po }}</option>
+</select>
+</form>
+{{ reservationForm.value | json }} 
+-->
+<div *ngIf="!isScheduleOK">
+<form [formGroup]="reservationForm" (submit)="saveReservation()" >
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choisir une date" fromControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year"[startAt]="date"></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-select placeholder=" heure " formControlName="time">
+            <mat-option *ngFor="let to  of timeOptions" [value]="to">
+              {{ to }}
+            </mat-option>
+            
+            
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="combien de personnes" formControlName="people">
+              <mat-option *ngFor="let po of peopleOptions" [value]="po">
+                {{ po }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button type="submit">confirme l'horaire</button>
+</form>
+</div>
+
+
+<div *ngIf="isScheduleOK">
+<form #f="ngForm" (submit)="finalizeReservation(f)">
+ <mat-form-field>
+    <input matInput type="text" name="firstName" [(ngModel)]="client.firstName" placeholder="prénom">
+ </mat-form-field>
+ <mat-form-field>
+    <input matInput type="text" name="lastName" [(ngModel)]="client.lastName" placeholder="nom">
+ </mat-form-field>
+ <mat-form-field>
+    <input matInput type="text" name="email" [(ngModel)]="client.email" placeholder="email">
+ </mat-form-field>
+ <mat-form-field>
+    <input matInput type="text" name="phone" [(ngModel)]="client.phone" placeholder="téléphone">
+ </mat-form-field>
+ <button mat-button type="submit">réserver</button>
+</form>
+</div>
