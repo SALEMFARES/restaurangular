@@ -11,7 +11,8 @@ import { EveningEvent } from '../modeles/evening-event.interface';
 export class ScheduleService {
 
   constructor(private httpClient: HttpClient) { }
-  search(term: string): Observable<EveningEvent[]> {
+  
+  search(term : string): Observable<EveningEvent[]> {
     const termLowercase = term.toLocaleLowerCase();
     return this.httpClient
                     .get<Schedule>('assets/schedules.json')

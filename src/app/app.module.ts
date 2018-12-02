@@ -88,7 +88,7 @@ const routes: Routes = [
     
 
   ],
-  providers: [{provide:MAT_DATE_LOCALE, useValue:'fr-FR'}],
+  providers: [QuickLunchService,{provide:MAT_DATE_LOCALE, useValue:'fr-FR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
