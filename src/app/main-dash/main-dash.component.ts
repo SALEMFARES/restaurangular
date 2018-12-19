@@ -17,8 +17,8 @@ export class MainDashComponent implements OnInit {
           { title: 'Pizzas', cols: 2, rows: 1, id: 'pzz' }
         ];
       
-burgers: Food [];
-pizzas: Food [];
+          burgers: Food [];
+             pizzas: Food [];
 galettes: Food [];
 
   constructor(private qls: QuickLunchService) {}

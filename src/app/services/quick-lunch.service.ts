@@ -1,5 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Food } from '../modeles/food.interface';
+
+
+
+
+
+
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +22,7 @@ burgers:Food[] = [
   { id: 3, title: "Burger du moment", price: 7.00 }
 ]
 
-pizzas: Food[] = [
+ pizzas: Food[] = [
   {id: 1, title: 'Marguerite', description: 'base tomate, mozzarella, olives', price: 7.70},
   {id: 2, title: 'Reine', description: 'base tomate, jambon blanc, champignons, mozzarella', price: 8.90},
   {id: 3, title: 'Royale', description: 'base tomate, jambon blanc, champignons, mozzarella, œuf, crème', price: 10.00},

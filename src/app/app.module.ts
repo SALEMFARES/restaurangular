@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import{ HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -70,7 +70,8 @@ const routes: Routes = [
     MatIconModule,
     MatListModule,
     MatCardModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}
+    ),
     MatGridListModule,
     MatMenuModule,
     MatTableModule,
@@ -85,10 +86,10 @@ const routes: Routes = [
     MatNativeDateModule,
     MatSelectModule,
     HttpClientModule
-    
+
 
   ],
-  providers: [QuickLunchService,{provide:MAT_DATE_LOCALE, useValue:'fr-FR'}],
+  providers: [QuickLunchService, {provide: MAT_DATE_LOCALE, useValue: 'fr-FR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
